@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/ProjectUno.iml" filepath="$PROJECT_DIR$/ProjectUno.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/.idea/ProjectUno.iml" filepath="$PROJECT_DIR$/.idea/ProjectUno.iml" />
->>>>>>> Added title
     </modules>
   </component>
 </project>
