@@ -5,6 +5,8 @@ div {
 body {
     background-color: aliceblue;
 }
+
+/*noinspection CssNoGenericFontName*/
 .instructions {
     font-family: "Times";
 }
