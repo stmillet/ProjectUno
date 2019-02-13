@@ -1,4 +1,6 @@
 
+    // This code allows for you to press the enter button in both the username and the password fields and it will click the button.
+
     let input = document.getElementById("username");
         input.addEventListener("keyup", function(event) {
             event.preventDefault();
@@ -41,6 +43,7 @@
         if (conCaps && conNum && conSym) {
 
             output = "Hello " + username + "! \nWelcome to our website!";
+            window.location.href="homepage.html";
         }
 
             alert(output);
