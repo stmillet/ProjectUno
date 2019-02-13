@@ -8,5 +8,6 @@
 
         // Code to determine if the password has a symbol, number and capital letter.
 
+
         alert("Hello " + username + "! \nWelcome to our website!");
     }
