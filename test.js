@@ -1,4 +1,19 @@
 
+    let input = document.getElementById("username");
+        input.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("login").click();
+            }
+        });
+
+    let input2 = document.getElementById("password");
+        input2.addEventListener("keyup", function(event) {
+           event.preventDefault();
+           if (event.keyCode === 13) {
+               document.getElementById("login").click();
+           }
+        });
 
 
     function greeting() {
