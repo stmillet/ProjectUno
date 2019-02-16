@@ -90,10 +90,14 @@
 
     function login() {
         let handle = "/user/login";
-        let requestBody;
-        let token;
-
+        let token = document.getElementById("authToken").value;
         let method = "post";
+
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let unformattedRequest = "{\"username\":\""+username+"\",\"password\":\""+password+"\"}";
+        let requestBody = formatJson(unformattedRequest);
+        document.getElementById("request").value = requestBody;
 
         send(handle, requestBody, method, token);
         return false;
@@ -118,6 +122,57 @@
             if (responseJSON.authToken) {
                 document.getElementById("authToken").value = responseJSON.authToken;
             }
-            document.getElementById("response").value =
+            document.getElementById("response").value = formatJson(response);
         };
+        obj.open(method, path, false);
+        obj.setRequestHeader("Content-Type", "application/json");
+        obj.setRequestHeader("Authorization", token);
+        obj.send(params);
+    }
+
+    function formatJson(inputText)
+    {
+        let temp = "";
+        let indent = 0;
+        for(let i in inputText)
+        {
+            let char = inputText[i];
+            if(char != null)
+            {
+                if(char === ']' || char === '}')
+                {
+                    temp += "\n";
+                    indent--;
+                    for(let j = 0; j < indent; j++)
+                    {
+                        temp += '\t';
+                    }
+
+                }
+
+                temp += char;
+
+                if (char === ',')
+                {
+                    temp += "\n";
+
+                    for(let j = 0; j < indent; j++)
+                    {
+                        temp += '\t';
+                    }
+
+                }
+                if(char === '{' || char === '[')
+                {
+                    temp += "\n";
+                    indent++;
+                    for(let j = 0; j < indent; j++)
+                    {
+                        temp += '\t';
+                    }
+                }
+            }
+        }
+
+        return temp;
     }

@@ -31,7 +31,7 @@ public class Server {
      * server should accept incoming client connections.
      */
     public void run(String portNumber) {
-        System.out.printf("Initializing HTTP Server on port %s", portNumber);
+        System.out.printf("Initializing HTTP Server on port %s%n", portNumber);
         try {
             server = HttpServer.create(
                     new InetSocketAddress(Integer.parseInt(portNumber)),
