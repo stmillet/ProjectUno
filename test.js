@@ -17,7 +17,6 @@
            }
         });
 
-
     function greeting() {
         let username = document.getElementById("username").value;
         let password = document.getElementById("password").value;
@@ -87,4 +86,38 @@
             }
         }
         return false;
+    }
+
+    function login() {
+        let handle = "/user/login";
+        let requestBody;
+        let token;
+
+        let method = "post";
+
+        send(handle, requestBody, method, token);
+        return false;
+    }
+
+    function register() {
+        let handle = "/user/login";
+        let requestBody;
+        let token;
+
+        let method = "post";
+
+        send(handle, requestBody, method, token);
+        return false;
+    }
+
+    function send(path, params, method, token) {
+        let obj = new XMLHttpRequest();
+        obj.onreadystatechange = () => {
+            let response = obj.responseText;
+            let responseJSON = JSON.parse(response);
+            if (responseJSON.authToken) {
+                document.getElementById("authToken").value = responseJSON.authToken;
+            }
+            document.getElementById("response").value =
+        };
     }
